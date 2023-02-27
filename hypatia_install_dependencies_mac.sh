@@ -24,6 +24,7 @@ wget https://www.nsnam.org/releases/ns-allinone-3.37.tar.bz2  || exit 1
 tar -xvf ns-allinone-3.37.tar.bz2  || exit 1
 
 cp broadcast.py ns-allinone-3.37/ns-3.37/ || exit 1
+cp isls.txt ns-allinone-3.37/ns-3.37/ || exit 1
 
 # satviz
 echo "There are currently no dependencies for satviz."
