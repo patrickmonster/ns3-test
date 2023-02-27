@@ -20,9 +20,10 @@ pip install numpy statsmodels || exit 1
 pip install git+https://github.com/snkas/exputilpy.git || exit 1
 git submodule update --init --recursive || exit 1
 
-wget https://www.nsnam.org/releases/ns-allinone-3.37.tar.bz2
-tar -xvf ns-allinone-3.37.tar.bz2
+wget https://www.nsnam.org/releases/ns-allinone-3.37.tar.bz2  || exit 1
+tar -xvf ns-allinone-3.37.tar.bz2  || exit 1
 
+cp broadcast.py ns-allinone-3.37/ns-3.37/ || exit 1
 
 # satviz
 echo "There are currently no dependencies for satviz."
