@@ -38,32 +38,39 @@ if local_shell.count_screens() != 0:
     exit(1)
 
 # Generate the commands
-commands_to_run = []
-for run in get_tcp_run_list():
-    # logs_ns3_dir = "temp/runs/" + run["name"] + "/logs_ns3"
-    # local_shell.remove_force_recursive(logs_ns3_dir)
-    # local_shell.make_full_dir(logs_ns3_dir)
-    # commands_to_run.append(
-    #     "cd ../../ns3-sat-sim/simulator; "
-    #     "./waf --run=\"main_satnet "
-    #     "--run_dir='../../integration_tests/test_manila_dalian_over_kuiper/temp/runs/" + run["name"] + "'\" "
-    #     "2>&1 | "
-    #     "tee '../../integration_tests/test_manila_dalian_over_kuiper/" + logs_ns3_dir + "/console.txt'"
-    # )
+# commands_to_run = []
+# for run in get_tcp_run_list():
+#     # logs_ns3_dir = "temp/runs/" + run["name"] + "/logs_ns3"
+#     # local_shell.remove_force_recursive(logs_ns3_dir)
+#     # local_shell.make_full_dir(logs_ns3_dir)
+#     # commands_to_run.append(
+#     #     "cd ../../ns3-sat-sim/simulator; "
+#     #     "./waf --run=\"main_satnet "
+#     #     "--run_dir='../../integration_tests/test_manila_dalian_over_kuiper/temp/runs/" + run["name"] + "'\" "
+#     #     "2>&1 | "
+#     #     "tee '../../integration_tests/test_manila_dalian_over_kuiper/" + logs_ns3_dir + "/console.txt'"
+#     # )
     
-    commands_to_run.append(
-        "cd ../ns-allinone-3.37/ns-3.37;"
-        "./ns3 run broadcast.py"
-    )
+#     commands_to_run.append(
+#         "cd ../ns-allinone-3.37/ns-3.37;"
+#         "./ns3 run broadcast.py"
+#     )
 
 
-# Run the commands
-print("Running commands (at most %d in parallel)..." % max_num_processes)
-for i in range(len(commands_to_run)):
-    print("Starting command %d out of %d: %s" % (i + 1, len(commands_to_run), commands_to_run[i]))
-    local_shell.detached_exec(commands_to_run[i])
-    while local_shell.count_screens() >= max_num_processes:
-        time.sleep(2)
+# # Run the commands
+# print("Running commands (at most %d in parallel)..." % max_num_processes)
+# for i in range(len(commands_to_run)):
+#     print("Starting command %d out of %d: %s" % (i + 1, len(commands_to_run), commands_to_run[i]))
+#     local_shell.detached_exec(commands_to_run[i])
+#     while local_shell.count_screens() >= max_num_processes:
+#         time.sleep(2)
+
+
+print("Starting command %d out of %d: %s" % (i + 1, len(commands_to_run), commands_to_run[i]))
+local_shell.detached_exec("cd ../ns-allinone-3.37/ns-3.37; ./ns3 run broadcast.py")
+while local_shell.count_screens() >= max_num_processes:
+    time.sleep(2)
+
 
 # Awaiting final completion before exiting
 print("Waiting completion of the last %d..." % max_num_processes)
