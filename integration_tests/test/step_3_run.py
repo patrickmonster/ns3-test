@@ -53,6 +53,7 @@ for run in get_tcp_run_list():
     
     commands_to_run.append(
         "cd ../../ns-allinone-3.37/ns-3.37;"
+        "mv ../../broadcast.py ./ ;"
         "./ns3 run ../../broadcast.py"
     )
 
