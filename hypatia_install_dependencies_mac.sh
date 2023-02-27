@@ -1,8 +1,8 @@
 # satgenpy
 echo "Installing dependencies for satgenpy..."
 python -m pip install numpy astropy ephem networkx sgp4 geopy matplotlib statsmodels || exit 1
-brew install -y projectm libgee libprotoident || exit 1
-brew install -y --cask profind
+brew install projectm libgee libprotoident || exit 1
+brew install --cask profind
 
 brew install python3-pip || exit 1
 # Mac alternatives (to be able to pip install cartopy)
@@ -14,8 +14,8 @@ pip install cartopy || exit 1
 
 # ns3-sat-sim
 echo "Installing dependencies for ns3-sat-sim..."
-brew install -y open-mpi open-completion libopenmpt lcov gnuplot || exit 1
-brew install -y --cask open-in-code || exit
+brew install open-mpi open-completion libopenmpt lcov gnuplot || exit 1
+brew install --cask open-in-code || exit
 pip install numpy statsmodels || exit 1
 pip install git+https://github.com/snkas/exputilpy.git || exit 1
 git submodule update --init --recursive || exit 1
