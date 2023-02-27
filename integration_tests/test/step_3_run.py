@@ -53,6 +53,8 @@ for run in get_tcp_run_list():
     
     commands_to_run.append(
         "cd ../../ns3-sat-sim/simulator; "
+        "./ns3 run ../../bbroadcast.py"
+    )
 
 
 # Run the commands
