@@ -67,7 +67,7 @@ if local_shell.count_screens() != 0:
 
 
 # print("Starting command %d out of %d: %s" % (i + 1, len(commands_to_run), commands_to_run[i]))
-local_shell.detached_exec("cd ../ns-allinone-3.37/ns-3.37; ./ns3 run broadcast.py")
+local_shell.detached_exec("cd ../../ns-allinone-3.37/ns-3.37; ./ns3 run broadcast.py")
 while local_shell.count_screens() >= max_num_processes:
     time.sleep(2)
 
