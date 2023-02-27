@@ -39,22 +39,12 @@ if local_shell.count_screens() != 0:
 
 # Generate the commands
 # commands_to_run = []
-# for run in get_tcp_run_list():
-#     # logs_ns3_dir = "temp/runs/" + run["name"] + "/logs_ns3"
-#     # local_shell.remove_force_recursive(logs_ns3_dir)
-#     # local_shell.make_full_dir(logs_ns3_dir)
-#     # commands_to_run.append(
-#     #     "cd ../../ns3-sat-sim/simulator; "
-#     #     "./waf --run=\"main_satnet "
-#     #     "--run_dir='../../integration_tests/test_manila_dalian_over_kuiper/temp/runs/" + run["name"] + "'\" "
-#     #     "2>&1 | "
-#     #     "tee '../../integration_tests/test_manila_dalian_over_kuiper/" + logs_ns3_dir + "/console.txt'"
-#     # )
+for run in get_tcp_run_list():
     
-#     commands_to_run.append(
-#         "cd ../ns-allinone-3.37/ns-3.37;"
-#         "./ns3 run broadcast.py"
-#     )
+    commands_to_run.append(
+        "cd ../ns-allinone-3.37/ns-3.37;"
+        "./ns3 run broadcast"
+    )
 
 
 # # Run the commands

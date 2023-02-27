@@ -1,7 +1,3 @@
-
-
-from ns import ns
-
 from ns import ns
 import sys
 
