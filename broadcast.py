@@ -43,7 +43,7 @@ def sendMessage(idx):
     echoClient.SetAttribute("PacketSize", ns.core.UintegerValue(1024))
 
     clientApps = echoClient.Install(nodes.Get(idx))
-    clientApps.Start(ns.core.Seconds(2.0))
+    clientApps.Start(ns.core.Seconds(.1))
     clientApps.Stop(sTime)
 for i in range(1, nCsma.value):
     sendMessage(i)
