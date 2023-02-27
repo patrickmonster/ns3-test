@@ -10,7 +10,7 @@ brew install proj geos
 # export CFLAGS=-stdlib=libc++
 # MACOSX_DEPLOYMENT_TARGET=10.14
 pip install git+https://github.com/snkas/exputilpy.git@v1.6 || exit 1
-pip install cartopy python-yq || exit 1
+pip install cartopy || exit 1
 
 # ns3-sat-sim
 echo "Installing dependencies for ns3-sat-sim..."
@@ -32,7 +32,7 @@ echo "Installing dependencies for paper..."
 pip install numpy || exit 1
 pip install git+https://github.com/snkas/exputilpy.git@v1.6 || exit 1
 pip install git+https://github.com/snkas/networkload.git@v1.3 || exit 1
-brew install-y gnuplot
+brew install gnuplot
 
 # Confirmation dependencies are installed
 echo ""
