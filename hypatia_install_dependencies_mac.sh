@@ -4,13 +4,13 @@ python -m pip install numpy astropy ephem networkx sgp4 geopy matplotlib statsmo
 brew install projectm libgee libprotoident || exit 1
 brew install --cask profind
 
-brew install python3-pip || exit 1
+# brew install python3-pip || exit 1
 # Mac alternatives (to be able to pip install cartopy)
-# brew install proj geos
+brew install proj geos
 # export CFLAGS=-stdlib=libc++
 # MACOSX_DEPLOYMENT_TARGET=10.14
 pip install git+https://github.com/snkas/exputilpy.git@v1.6 || exit 1
-pip install cartopy || exit 1
+pip install cartopy python-yq || exit 1
 
 # ns3-sat-sim
 echo "Installing dependencies for ns3-sat-sim..."
